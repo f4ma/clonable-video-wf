@@ -1,0 +1,20 @@
+.image_place {
+  opacity:0;
+  transform: scale(1);
+}
+.image_box {
+  opacity:0;
+  height:100%;
+}
+
+.h1_wrapper.v1 {
+  transform: translate(-0em, 0px);
+  opacity: 0;
+}
+
+.h1_wrapper.v2 {
+  transform: translate(-38.1em, 0px);
+  opacity: 0;
+}
+
+.letter {display: inline-block;} .tricksword {white-space: nowrap;}
