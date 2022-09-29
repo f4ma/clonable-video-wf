@@ -1,4 +1,8 @@
 import anime from 'animejs/lib/anime.es.js'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 // Copyright start
 // © Code by T.RICKS, https://www.tricksdesign.com/
@@ -78,3 +82,39 @@ fadeUpvideo.add({
 slideUp.play()
 fadeUp.play()
 fadeUpvideo.play()
+
+// Scroll into view
+function formAnimation() {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-main-form',
+      start: '-35% top',
+      end: 'bottom top',
+      //   toggleActions: 'restart none none reverse',
+    },
+  })
+  tl.from(
+    '.field_wrap',
+    {
+      opacity: 0,
+      y: '40',
+      stagger: { each: 0.2, from: 'start' },
+      ease: 'power3.out',
+      duration: 0.8,
+    },
+    0
+  )
+
+  tl.to(
+    '.field_wrap',
+    {
+      opacity: 1,
+      y: '0',
+      stagger: { each: 0.2, from: 'start' },
+      ease: 'power3.out',
+      duration: 0.8,
+    },
+    0
+  )
+}
+formAnimation()
